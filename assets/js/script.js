@@ -18,7 +18,7 @@ var AnsStatus = document.querySelector("#AnsStatus");
 
 //Get ref and variable for timer in step 2
 var timeEl = document.querySelector("#TimerCount");
-var secondsLeft = 30;
+var secondsLeft = 60;
 
 //set variable for quiz score and ongoing question counter in step 2 and 3
 var questStatus=0;
@@ -31,7 +31,7 @@ var userName= document.querySelector("#username");
 var submitbtn = document.querySelector("#Submit");
 
 
-// Question details
+// Question details refer to W3 
 const questions = [];
 questions[0] = {
     question: "Inside which HTML element do we put the JavaScript?",
@@ -39,13 +39,47 @@ questions[0] = {
     ans:"A",
 };
 
-
 questions[1] = {
     question: "What is the correct JavaScript syntax to change the content of the HTML element below? <p id='demo'>This is a demonstration.</p>",
     answerOption: [" document.getElement('id').innerHTML = 'Hello World!'" , " #demo.innerHTML = 'Hello World!'" , "document.querySelector.innerHTML ='Hello World'" , "document.getElementById('demo').innerHTML = 'Hello World'",],
     ans:"D",
 };
 
+questions[2] = {
+    question: "Where is the correct place to insert a JavaScript?",
+    answerOption: [" The <head> section " , "The <body> section " , "The <header> section" , "Both <head> and <body> section",],
+    ans:"D",
+};
+questions[3] = {
+    question: "How do you write 'Hi' in an alert box?",
+    answerOption: ["alert('Hi')" , "window('Hi')" , "windowbox('Hi')" , "alertwindow('Hi')",],
+    ans:"A",
+};
+questions[4] = {
+    question: "How does a for loop start",
+    answerOption: ["for (i=0)" , "for(i=0; i <10; i++)" , "for (i=0: i<10: i++)" , "for (i=0, i<10, i++)",],
+    ans:"B",
+};
+questions[5] = {
+    question: "How do you create a function in JavaScript?</p>",
+    answerOption: ["function myfuntion()" , " create myfunction()" , "int myfunction()" , "var myfunction()",],
+    ans:"A",
+};
+questions[6] = {
+    question: "What is the correct syntax for referring to an external script called 'xxx.js'?",
+    answerOption: ["script href='xxx.js'" , " script src='xxx.js'" , "script input='xxx.js'" , "script name='xxx.js'",],
+    ans:"A",
+};
+questions[7] = {
+    question: "How does the while loop start?",
+    answerOption: [" While (i<=10)" , "While 'i<=10'" , "do {} While (i<=10)" , "while{i<=10}",],
+    ans:"A",
+};
+questions[8] = {
+    question: "Which syntax is used to indicate the start of an multi-line comments?",
+    answerOption: [" <" , " #" , "//" , "/*",],
+    ans:"D",
+};
 
 
 function init(){
@@ -62,9 +96,7 @@ function SetTimer(){
         if(secondsLeft === 0) {
           // Stops execution of action at set interval
           clearInterval(timerInterval);
-          EndofQuiz();
-          // Calls function to create and append image
-          //sendMessage();
+          EndofQuiz();      
         }
     
       }, 1000);
@@ -81,7 +113,7 @@ function ShowQuestionPage(){
 
  //show questions details   
 function ShowQuestion(){   
-    questNo = questStatus;
+    questNo.textContent = questStatus+1;
     QuestDetail.textContent = questions[questStatus].question;
     ansA.textContent = questions[questStatus].answerOption[0];
     ansB.textContent = questions[questStatus].answerOption[1];
@@ -107,16 +139,19 @@ function checkAns(){
 
 
     if (userAns === questions[questStatus].ans){
-        AnsStatus.textContent = "Correct";
+        AnsStatus.textContent = "That's Correct";
         score += 1;
         console.debug(score);
     }
     else{
         AnsStatus.textContent = "Oh! Wrong Answer."
         secondsLeft -= 5;
+        if (secondsLeft<=0){
+            secondsLeft=1;
+        }
     }  
    
-   questStatus=questStatus+1; 
+   questStatus=questStatus+1;  
    
    if(questStatus<questions.length) {
         ShowQuestion();
@@ -183,8 +218,4 @@ function showElement(id){
 startBtn.addEventListener("click", ShowQuestionPage);
 NextBtn.addEventListener("click", checkAns);
 submitbtn.addEventListener("click", enterInital);
-//generateBtn.addEventListener("click", step2ft);
-//NextCriteriaBtn.addEventListener("click", step3ft);
-//NextLengthBtn.addEventListener("click", step4ft);
-//SubmitBtn.addEventListener("click", writePassword);
 init();

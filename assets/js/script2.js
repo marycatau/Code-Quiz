@@ -12,9 +12,8 @@ function showRecord(StoredScore){
     for(i=0; i<StoredScore.length; i++){
         var ScoreRecord = StoredScore[i];
         var li = document.createElement("li");
-        li.textContent = ScoreRecord.name +"     SORES      "+ ScoreRecord.score;
+        li.textContent = ScoreRecord.name +"       SCORES      "+ ScoreRecord.score;
         li.setAttribute("data-index", i);
-
         scoreList.appendChild(li);
        
     }

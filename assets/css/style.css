@@ -14,7 +14,7 @@ body,
 
 body {
   font-family: sans-serif;
-  background-color: #f9fbfd;
+  background-color: rgb(234, 237, 211);
 }
 
 .wrapper {
@@ -27,7 +27,7 @@ header {
  text-align: center;
   padding: 20px;
   padding-top: 0px;
-  color: hsl(206, 17%, 28%);
+  color: hsl(206, 67%, 11%);
 }
 
 #HeaderSect {
@@ -47,7 +47,7 @@ header {
 
 .card {
   background-color: hsl(0, 0%, 100%);
-  border-radius: 5px;
+  border-radius: 10px;
   border-width: 1px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
   color: hsl(206, 17%, 28%);
@@ -67,6 +67,7 @@ header {
 
 .card-body {
   min-height: 100px;
+  padding: 5%;
 }
 
 .card-footer {
@@ -89,11 +90,11 @@ header {
 
 .btn {
   border: none;
-  background-color: hsl(360, 91%, 36%);
+  background-color: rgb(223, 195, 118);
   border-radius: 25px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
     0px;
-  color: hsl(0, 0%, 100%);
+  color: hsl(240, 20%, 5%);
   display: inline-block;
   font-size: 22px;
   line-height: 22px;
@@ -102,6 +103,7 @@ header {
   text-align: center;
   cursor: pointer;
 }
+
 
 button[disabled] {
   cursor: default;

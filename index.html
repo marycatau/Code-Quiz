@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Code Quiz</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <header>
+        <div id ="HeaderSect">
+            <div id ="HighestScore">
+                <a href="./HighestScore.html">HighestScore</a>
+            </div>
+            <div id="Timer">
+                <p> Timer : <Span id="TimerCount">60</Span></p>
+            </div>
+        </div>
+        <h1> CODE QUIZ</h1>
+      </header>
+      
+      <!-- step 1 -->
+      <div id="step1" class="card">
+        <div class="card-header"> 
+          <h2>Are you Ready??</h2>
+        </div>
+        <div class="card-body">
+          <p>Try to answer the following JavaScript question within 1 minutes. </p>
+        </div>
+        <div class="card-footer">
+          <button id="startbtn" class="btn">Start</button>
+        </div>
+      </div>
+
+      <!-- step 2  quiz details-->
+      <section id="step2" class="card">
+        <div class="card-header">
+          <h2>Question No: <span id="QuestNo"></span></h2>
+        </div>
+        <div class="card-body">
+              <p id="QuestDetail"></p>
+              <form>
+                <input type="radio" id="aAns" name="Ans" value="A">
+                <label for="aAns">A:</label><Span id="ansA"></Span><br>
+
+                <input type="radio" id="BAns" name="Ans" value="B">
+                <label for="BAns">B:</label><Span id="ansB"></Span><br>
+
+                <input type="radio" id="Cans" name="Ans" value="C">
+                <label for="Cans">C:</label><Span id="ansC"></Span><br>
+
+                <input type="radio" id="Dans" name="Ans" value="D">
+                <label for="Dans">D:</label><Span id="ansD"></Span><br>
+             </form>
+                <!--
+              <p>A.</p>
+              <p>B. </p>
+              <p>C. <Span id="ansC"></Span></p>
+              <p>D.<Span id="ansD"></Span></p>
+              <br>
+              <label for="UserAns">Answer is    </label>
+              <input type="radio" name="UserAns" id="UserAns">
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+              </select>
+                    -->  
+        </div>
+
+        <div class="card-footer">
+            <p id="AnsStatus"></p>
+          <button id="NextQuest" class="btn">Next Question</button>
+        </div> 
+      </section>
+
+      <!-- step 3  Enter Initial-->
+      <section id="step3" class="card">
+        <div class="card-header">
+          <h2>End of Quiz</h2>
+        </div> 
+        <div class="card-body">
+          <p>Well Done!</p>
+          <p>Your Score is <span id="Score"></span></p>  
+          <label for ="username"> Please enter your Initial:</label>
+          <input  type="text" name="username" id="username" max="128" min="8">
+        </div>
+        <div class="card-footer">
+          <button id="Submit" class="btn">Submit</button>
+        </div> 
+      </section>
+
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>

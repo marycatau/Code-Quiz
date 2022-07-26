@@ -123,9 +123,9 @@ function ShowQuestion(){
 }
 
 function checkAns(){
- 
 
     var ans = document.getElementsByName('Ans');
+    console.debug(ans.value);
 
     for (let i of ans) {
 
@@ -143,7 +143,11 @@ function checkAns(){
         score += 1;
         console.debug(score);
     }
-    else{
+    else if (!userAns){
+        alert("Not Answered Yet");
+        return;
+    }
+    else {
         AnsStatus.textContent = "Oh! Wrong Answer."
         secondsLeft -= 5;
         if (secondsLeft<=0){

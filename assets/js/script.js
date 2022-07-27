@@ -60,7 +60,7 @@ questions.push({
 });
 
 questions.push({
-    question: "How do you create a function in JavaScript?</p>",
+    question: "How do you create a function in JavaScript?",
     answerOption: ["function myfuntion()" , " create myfunction()" , "int myfunction()" , "var myfunction()",],
     ans:"A",
 });

@@ -68,7 +68,7 @@ questions[5] = {
 questions[6] = {
     question: "What is the correct syntax for referring to an external script called 'xxx.js'?",
     answerOption: ["script href='xxx.js'" , " script src='xxx.js'" , "script input='xxx.js'" , "script name='xxx.js'",],
-    ans:"A",
+    ans:"B",
 };
 questions[7] = {
     question: "How does the while loop start?",
@@ -89,16 +89,18 @@ function init(){
 
 
 function SetTimer(){
-    var timerInterval = setInterval(function() {
-        secondsLeft--;
-        timeEl.textContent = secondsLeft;
-    
-        if(secondsLeft === 0) {
+    var timerInterval = setInterval(function() {    
+        if(secondsLeft <= 0) {
           // Stops execution of action at set interval
           clearInterval(timerInterval);
-          EndofQuiz();      
+          secondsLeft=0;
+          timeEl.textContent = secondsLeft;
+          EndofQuiz();
+          return;
         }
-    
+
+        secondsLeft--;
+        timeEl.textContent = secondsLeft;
       }, 1000);
 }
 
@@ -123,12 +125,10 @@ function ShowQuestion(){
 }
 
 function checkAns(){
-
     var ans = document.getElementsByName('Ans');
     console.debug(ans.value);
 
     for (let i of ans) {
-
         if (i.checked) {
             userAns= i.value;
         }
@@ -136,7 +136,6 @@ function checkAns(){
     console.debug(userAns);
     console.debug(questions[questStatus].ans);
     console.debug(questStatus)
-
 
     if (userAns === questions[questStatus].ans){
         AnsStatus.textContent = "That's Correct";
@@ -149,10 +148,7 @@ function checkAns(){
     }
     else {
         AnsStatus.textContent = "Oh! Wrong Answer."
-        secondsLeft -= 5;
-        if (secondsLeft<=0){
-            secondsLeft=1;
-        }
+        secondsLeft -= 5;    
     }  
    
    questStatus=questStatus+1;  
@@ -163,8 +159,7 @@ function checkAns(){
     else
     {
         questStatus = 0;
-        secondsLeft = 1;
-        EndofQuiz();
+        secondsLeft = 0;
     }
 
 

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Code QUIZ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
 
@@ -12,7 +13,7 @@
     <div class="wrapper">
       <header>
         
-        <h1>CODE Quiz</h1>
+        <h1>CODE QUIZ</h1>
       </header>
       
       <!-- step 4 show score record-->
@@ -20,16 +21,33 @@
         <div class="card-header"> 
           <h2>ScoreRecords</h2>
         </div>
+        
         <div class="card-body">
-          <ol id="ScoreList">
-
-          </ol>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">name</th>
+                <th scope="col">Score</th>
+              </tr>
+            </thead>
+            <tbody id="ScoreList">
+            </tbody>
+          </table>
         </div>
+        
         <div class="card-footer">
-          <a href="./index.html"><button id="goBack" class="btn">Back</button></a>
-          <button id="ClearScore" class="btn">ClearScore</button>
-          
+
+          <div class="btn-group">
+            <a href="./index.html" class="btn btn-warning" aria-current="page">Back</a>
+          </div>
+
+
+       <!--     <a href="./index.html"><button id="goBack" class="btn">Back</button></a>-->
+            <button id="ClearScore" class="btn btn-warning">ClearScore</button>
         </div>
+          
+      
       </div>
     </div>
     <script src="./assets/js/script2.js"></script>

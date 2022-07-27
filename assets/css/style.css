@@ -43,6 +43,7 @@ header {
 
 #Timer {
     display: inline-block;
+    margin: 16px 0px;
 }
 
 .card {

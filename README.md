@@ -5,7 +5,7 @@
    The Challenge of the Coding boot camp of University of Birmingham this week is to build a timed JavaScript coding quiz with multiple-choice questions. It runs in the browser with features dynamically using HTML and CSS powered by JavaScript code. 
 
     The code was then checked at the following website for the web accessiblity and the markup
-    * https://wave.webaim.org/
+    * https://www.webaccessibility.com/
     * https://validator.w3.org/
 
 * Screenshot of deployed Application

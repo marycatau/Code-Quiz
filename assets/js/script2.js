@@ -9,7 +9,6 @@ function showRecord(StoredScore){
     for(i=0; i<StoredScore.length; i++){
         var ScoreRecord = StoredScore[i];
 
-
         var tr= document.createElement("tr");
         var th =document.createElement("th");
         th.textContent = i+1;
@@ -25,9 +24,7 @@ function showRecord(StoredScore){
         tr.appendChild(th);
         tr.appendChild(td1);
         tr.appendChild(td2);
-
     }
-
 }
 
 function init(){ 
@@ -36,7 +33,6 @@ function init(){
     console.debug(StoredScore);
     console.debug(typeof(StoredScore));
     console.debug(StoredScore.length);
-
 
     //sorting from highest to lowest score        
     for(i = 0 ; i < StoredScore.length;i++)
@@ -51,16 +47,16 @@ function init(){
                 StoredScore[i] = tempScore;
             }
         }
-    }
-
-    
+    }    
     showRecord(StoredScore);
 }
 
 function clearRecord(){
-    scoreList.textContent = "";
-    var StoredScore = "";
-    localStorage.setItem("StoredScore", JSON.stringify(StoredScore));
+    if (confirm("Are you sure to clear scores?") == true) {
+        scoreList.textContent = "";
+        var StoredScore = "";
+        localStorage.setItem("StoredScore", JSON.stringify(StoredScore));
+    }
 }
 
 clearbtn.addEventListener("click", clearRecord);

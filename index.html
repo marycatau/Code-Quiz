@@ -32,7 +32,7 @@
           <p>Try to answer the following JavaScript questions within 1 minutes. </p>
         </div>
         <div class="card-footer">
-          <button id="startbtn" class="btn btn-warning">Start</button>
+          <button id="startbtn" class="btn btn-success">Start</button>
         </div>
       </div>
 
@@ -44,23 +44,28 @@
         <div class="card-body">
               <p id="QuestDetail"></p>
               <form>
-                <input type="radio" id="aAns" name="Ans" value="A">
-                <label for="aAns">A:</label><Span id="ansA"></Span><br>
-
-                <input type="radio" id="BAns" name="Ans" value="B">
-                <label for="BAns">B:</label><Span id="ansB"></Span><br>
-
-                <input type="radio" id="Cans" name="Ans" value="C">
-                <label for="Cans">C:</label><Span id="ansC"></Span><br>
-
-                <input type="radio" id="Dans" name="Ans" value="D">
-                <label for="Dans">D:</label><Span id="ansD"></Span><br>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" id="aAns" name="Ans" value="A">
+                  <label class="form-check-label" for="aAns" id="ansA"></label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" id="BAns" name="Ans" value="B">
+                  <label class="form-check-label" for="BAns" id="ansB"></label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" id="Cans" name="Ans" value="C">
+                  <label class="form-check-label" for="Cans" id="ansC"></label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" id="Dans" name="Ans" value="D">
+                  <label class="form-check-label" for="Dans" id="ansD"></label>
+                </div>
              </form>
         </div>
 
         <div class="card-footer">
             <p id="AnsStatus"></p>
-          <button id="NextQuest" class="btn btn-warning">Next Question</button>
+          <button id="NextQuest" class="btn btn-success">Next Question</button>
         </div> 
       </section>
 
@@ -76,7 +81,7 @@
           <input  type="text" name="username" id="username">
         </div>
         <div class="card-footer">
-          <button id="Submit" class="btn btn-warning">Submit</button>
+          <button id="Submit" class="btn btn-success">Submit</button>
         </div> 
       </section>
     </div>

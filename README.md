@@ -11,7 +11,7 @@
 * Screenshot of deployed Application
 
 ![ScreenShot of the deployed application](https://github.com/marycatau/Code-Quiz/blob/main/assets/images/screenshot%20of%20deployed%20application%20(2).jpeg?raw=true)
-q
+
 
 * Link to deployed application
 

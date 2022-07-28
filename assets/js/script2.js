@@ -35,7 +35,7 @@ function init(){
     console.debug(StoredScore.length);
 
     //sorting from highest to lowest score        
-    for(i = 0 ; i < StoredScore.length;i++)
+   /* for(i = 0 ; i < StoredScore.length;i++)
     {
         for(j = i+1 ; j< StoredScore.length;j++)
         {
@@ -47,7 +47,12 @@ function init(){
                 StoredScore[i] = tempScore;
             }
         }
-    }    
+    }
+    */
+    StoredScore.sort(function(a, b){
+        return b.score - a.score;
+    });
+
     showRecord(StoredScore);
 }
 
